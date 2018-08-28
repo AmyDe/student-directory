@@ -1,8 +1,8 @@
-# student-directory
+# Student Directory #
 
 This script allows you to manage the list of students enrolled at a fictional school.
 
-# How to use
+## How to use ##
 
 '''shell
 ruby directory.rb
