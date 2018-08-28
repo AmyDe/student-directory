@@ -1,3 +1,4 @@
+student_count = 11
 # adding a comment. Student names.
 puts "The students of Villains Academy"
 puts "-------------"
@@ -13,7 +14,4 @@ puts "The Joker"
 puts "Joffrey Baratheon"
 puts "Norman Bates"
 # adding another comment. No. of students
-print "Overall, we have "
-# Adding a comment doesn't have an effect on how the code displays.
-print 11 
-puts " great students"
+puts "Overall, we have #{student_count} great students"
