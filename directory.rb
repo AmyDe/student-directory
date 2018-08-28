@@ -17,8 +17,10 @@ def print_header
 end
 
 def print_names(student_data)
-  student_data.each_with_index { |student, index| 
-    puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
+  student_data.each { |student|
+  if student[:name].start_with?("A")
+    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  end
   }
 end
 
