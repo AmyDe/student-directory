@@ -21,11 +21,23 @@ def print_header
 end
 
 def print_names(student_data)
-  student_data.each { |stud| 
-    print "#{stud[:name]}" 
-    print"(#{stud[:cohort]} cohort)".rjust(50)
-    puts " "
+
+student_cohort = {}
+
+student_data.each { |stu|
+  cohort_group = stu[:cohort]
+  
+    if student_cohort[cohort_group] == nil
+      student_cohort[cohort_group] = []
+    end
+    student_cohort[cohort_group].push(stu[:name])
+    }
+
+student_cohort.each { |cohort, name|
+  puts "Cohort Month #{cohort}:"
+  puts name
   }
+
 end
 
 def print_footer(names)
