@@ -1,10 +1,12 @@
 def input_students
-  puts "Please enter the student's names:"
-  puts "To finish, hit return twice"
+  puts "Please enter the student's name:"
   students = []
   name = gets.chomp
+  puts "Please enter the students height, as a number only, in cm"
+  puts "To finish, hit return twice"
   while !name.empty?
-    students << {name: name, cohort: :November}
+    height = gets.chomp
+    students << {name: name, cohort: :November, height: height,}
     puts "Now we have #{students.count} students"
     name = gets.chomp
   end
@@ -17,11 +19,9 @@ def print_header
 end
 
 def print_names(student_data)
-  student_place = 0
-  while student_place < student_data.length
-    puts "#{student_data[student_place][:name]} (#{student_data[student_place][:cohort]} cohort)"
-    student_place += 1
-  end
+  student_data.each { |stud| 
+    puts "#{stud[:name]} (#{stud[:cohort]} cohort) #{stud[:height]}cm tall"
+  }
 end
 
 def print_footer(names)
