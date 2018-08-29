@@ -9,7 +9,11 @@ def input_students
     cohort = gets.chomp
     cohort = "Forever" if cohort.empty?
     students << {name: name, cohort: cohort}
-    puts "Now we have #{students.count} students"
+    if students.count != 1
+      puts "Now we have #{students.count} students"
+    else
+      puts "Now we have #{students.count} student"
+    end
     name = gets.chomp
   end
   students
@@ -34,14 +38,18 @@ student_data.each { |stu|
     }
 
 student_cohort.each { |cohort, name|
-  puts "Cohort Month #{cohort}:"
+  puts "Cohort Month - #{cohort}:"
   puts name
   }
 
 end
 
 def print_footer(names)
-  puts "Overall, we have #{names.count} great students".center(50)
+  if names.count != 1
+    puts "Overall, we have #{names.count} great students".center(50)
+  else
+    puts "Overall, we have 1 great student".center(50)
+  end
 end
 
 students = input_students
