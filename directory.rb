@@ -17,11 +17,11 @@ def print_header
 end
 
 def print_names(student_data)
-  student_data.each { |student|
-  if student[:name].length < 12
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  student_place = 0
+  while student_place < student_data.length
+    puts "#{student_data[student_place][:name]} (#{student_data[student_place][:cohort]} cohort)"
+    student_place += 1
   end
-  }
 end
 
 def print_footer(names)
