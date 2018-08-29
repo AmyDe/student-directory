@@ -1,12 +1,10 @@
 def input_students
   puts "Please enter the student's name:"
+  puts "To finish, hit return twice"
   students = []
   name = gets.chomp
-  puts "Please enter the students height, as a number only, in cm"
-  puts "To finish, hit return twice"
   while !name.empty?
-    height = gets.chomp
-    students << {name: name, cohort: :November, height: height,}
+    students << {name: name, cohort: :November,}
     puts "Now we have #{students.count} students"
     name = gets.chomp
   end
@@ -14,18 +12,20 @@ def input_students
 end
 
 def print_header
-  puts "The students of Villains Academy"
-  puts "-------------"
+  puts "The Students of Villains Academy".center(50)
+  puts "-------------".center(50)
 end
 
 def print_names(student_data)
   student_data.each { |stud| 
-    puts "#{stud[:name]} (#{stud[:cohort]} cohort) #{stud[:height]}cm tall"
+    print "#{stud[:name]}" 
+    print"(#{stud[:cohort]} cohort)".rjust(50)
+    puts " "
   }
 end
 
 def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+  puts "Overall, we have #{names.count} great students".center(50)
 end
 
 students = input_students
