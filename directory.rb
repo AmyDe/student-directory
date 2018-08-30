@@ -53,6 +53,10 @@ def print_footer(names)
 end
 
 students = input_students
-print_header
-print_names(students)
-print_footer(students)
+if !students.empty?
+  print_header
+  print_names(students)
+  print_footer(students)
+else
+  puts "You need to enter student data"
+end
